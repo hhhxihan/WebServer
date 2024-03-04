@@ -3,19 +3,19 @@ package main
 import(
 	"fmt"
 	"net/http"
-	"src"
+	"WebServer/src"
+	"strconv"
 )
 
 func main() {
 	
-	var address string;
-	
+	src.LogConfig(Config)
 
 	server:=http.Server{
-		Addr:
-		Handler:
+		Addr:src.Config.Address+strconv.Itoa(src.Config.Port)
+		Handler:&src.ProcessStr{}
 	}
-
+	src.LoadWeb()
 	src.Init() //初始化处理函数
 
 	server.ListenAndServer()
