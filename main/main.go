@@ -9,14 +9,17 @@ import(
 
 func main() {
 	
-	src.LogConfig(Config)
-
+	src.LogConfig("configs/config.json")
+	address:=src.Config.Address+strconv.Itoa(src.Config.Port)
+	fmt.Println("listen address: ",address)
 	server:=http.Server{
-		Addr:src.Config.Address+strconv.Itoa(src.Config.Port)
-		Handler:&src.ProcessStr{}
+		Addr:address,
+		Handler:&src.ProcessStr{},
 	}
-	src.LoadWeb()
+	src.LoadWeb("web/*.tmpl")
 	src.Init() //初始化处理函数
 
-	server.ListenAndServer()
+	fmt.Println("start listen..")
+
+	server.ListenAndServe()
 }
