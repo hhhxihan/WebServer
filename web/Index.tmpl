@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>登录界面</title>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .main-content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h>Index</h>
-    <img src="xxxx" alt="photo">
+    <div class="container">
+        <header>
+            <h1>Welcome</h1>
+        </header>
+        <div class="main-content">
+            <p>Welcome to our website!</p>
+            <p>test for go web</p>
+            <ul>
+                {{range .Items}}
+                    <li>{{.}}</li>
+                {{end}}
+            </ul>
+            <p>Feel free to modify this template to suit your needs.</p>
+        </div>
+        <footer>
+            <p>&copy; 2024  Website</p>
+        </footer>
+    </div>
 </body>
 </html>
