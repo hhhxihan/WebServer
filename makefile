@@ -1,2 +1,2 @@
 WebServer:
-	go build -o WebServer ./main/main.go
+	go build -o WebServer main/main.go
